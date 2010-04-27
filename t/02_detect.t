@@ -20,7 +20,8 @@ is_deeply $res,
     'carrier_longname' => '',
     'user_id'          => undef,
     'is_softbank'      => 0,
-    'encoding'         => 'utf-8'
+    'encoding'         => 'utf-8',
+    'content_type'     => 'text/html;charset=utf-8',
   };
 
 done_testing;

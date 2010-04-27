@@ -23,7 +23,8 @@ is_deeply $res,
     'carrier_longname' => 'EZweb',
     'user_id'          => 'abcdefghij',
     'is_softbank'      => 0,
-    'encoding'         => 'x-sjis-ezweb-auto'
+    'encoding'         => 'x-sjis-ezweb-auto',
+    'content_type'     => 'text/html;charset=shift_jis',
   };
 
 done_testing;

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use parent 'Plack::Middleware';
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 my $ma = HTTP::MobileAgentLite->new();;
 
@@ -20,7 +20,7 @@ package HTTP::MobileAgentLite;
 
 use strict;
 use warnings;
-our $VERSION = '0.0.2';
+
 
 my $DoCoMoRE          = '^DoCoMo/\d\.\d[ /]';
 my $JPhoneRE          = '^(?i:J-PHONE/\d\.\d)';
@@ -47,6 +47,7 @@ sub _default_res_data {
         is_bot           => 0,
         is_mobile        => 0,
         encoding         => 'utf-8',
+        content_type     => 'text/html;charset=utf-8',
         carrier          => "",
         carrier_longname => "",
         user_id          => undef,
@@ -66,6 +67,7 @@ sub detect {
             $res->{carrier}          = "I";
             $res->{carrier_longname} = "DoCoMo";
             $res->{encoding}         = "x-utf8-docomo";
+            $res->{content_type}     = "application/xhtml+xml";
             $res->{user_id}          = $env->{HTTP_X_DCMGUID};
         }
         elsif ($2) {
@@ -81,12 +83,14 @@ sub detect {
             $res->{carrier}          = "E";
             $res->{carrier_longname} = "EZweb";
             $res->{encoding}         = "x-sjis-ezweb-auto";
+            $res->{content_type}     = "text/html;charset=shift_jis";
             $res->{user_id}          = $env->{HTTP_X_UP_SUBNO};
         }
         elsif ($4) {
             $res->{is_airh}          = 1;
             $res->{carrier}          = "H";
             $res->{carrier_longname} = "AirHPhone";
+            $res->{content_type}     = "text/html;charset=shift_jis";
             $res->{encoding}         = "x-sjis-docomo";
         }
         $res->{is_mobile} = 1;

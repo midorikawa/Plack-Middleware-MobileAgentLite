@@ -21,7 +21,8 @@ is_deeply $res,
     'carrier_longname' => 'AirHPhone',
     'user_id'          => undef,
     'is_softbank'      => 0,
-    'encoding'         => 'x-sjis-docomo'
+    'encoding'         => 'x-sjis-docomo',
+    'content_type'     => 'text/html;charset=shift_jis',
   };
 
 done_testing;
