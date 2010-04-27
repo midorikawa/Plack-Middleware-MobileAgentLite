@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use parent 'Plack::Middleware';
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 my $ma = HTTP::MobileAgentLite->new();;
 
