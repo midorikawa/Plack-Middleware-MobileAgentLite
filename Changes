@@ -1,5 +1,5 @@
 Revision history for Perl extension Plack::Middleware::MobileAgentLite
-0.04     Wed Apr 28 03:27:44 2010
+0.04     Wed Apr 28 03:32:44 2010
 				- willcom test add.
 0.03     Wed Apr 28 00:58:44 2010
 				- content_type attribute add.
