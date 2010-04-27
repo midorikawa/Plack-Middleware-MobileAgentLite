@@ -24,7 +24,8 @@ is_deeply $res,
     'carrier_longname' => 'Vodafone',
     'user_id'          => 'abcdefghij',
     'is_softbank'      => 1,
-    'encoding'         => 'x-utf8-vodafone'
+    'encoding'         => 'x-utf8-vodafone',
+    'content_type'     => 'text/html;charset=utf-8',
   };
 
 done_testing;

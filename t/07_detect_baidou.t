@@ -23,7 +23,8 @@ is_deeply $res,
     'carrier_longname' => 'DoCoMo',
     'user_id'          => undef,
     'is_softbank'      => 0,
-    'encoding'         => 'x-utf8-docomo'
+    'encoding'         => 'x-utf8-docomo',
+    'content_type'     => 'application/xhtml+xml',
   };
 
 done_testing;
