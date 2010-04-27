@@ -1,0 +1,8 @@
+Revision history for Perl extension Plack::Middleware::MobileAgentLite
+0.03     Wed Apr 28 00:58:44 2010
+				- content_type attribute add.
+0.0.2    Wed Mar 04 16:11:44 2010
+				- HTTP::MobileAgentLite same packeage.
+
+0.0.1    Sun Feb 28 16:41:26 2010
+        - original version
