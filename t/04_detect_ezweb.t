@@ -6,7 +6,8 @@ my $ma = HTTP::MobileAgentLite->new();
 
 my $env = {
     HTTP_USER_AGENT => 'KDDI-SH3D UP.Browser/6.2_7.2.7.1.K.4.303 (GUI) MMP/2.0',
-    HTTP_X_UP_SUBNO => 'abcdefghij'
+    HTTP_X_UP_SUBNO => 'abcdefghij',
+    HTTP_X_UP_DEVCAP_MULTIMEDIA => 'A300971224403120',
 };
 my $res = $ma->detect($env);
 
@@ -17,6 +18,7 @@ is_deeply $res,
     'is_airh'          => 0,
     'is_docomo'        => 0,
     'is_bot'           => 0,
+    'is_gps'           => 1,
     'carrier'          => 'E',
     'is_mobile'        => 1,
     'is_non_mobile'    => 0,
