@@ -26,6 +26,9 @@ is_deeply $res,
     'is_softbank'      => 0,
     'encoding'         => 'x-utf8-docomo',
     'content_type'     => 'application/xhtml+xml',
+	'is_smartphone'    => 0,
+	'is_iphone'		   => 0,
+	'is_android'       => 0,
   };
 
 done_testing;

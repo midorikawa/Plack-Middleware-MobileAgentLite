@@ -27,6 +27,9 @@ t/06_detect_google.t
 t/07_detect_baidou.t
 t/08_detect_mediapartner.t
 t/09_detect_airh.t
+t/10_detect_willcom.t
+t/11_detect_iphone.t
+t/12_detect_android.t
 xt/01_podspell.t
 xt/02_perlcritic.t
 xt/03_pod.t

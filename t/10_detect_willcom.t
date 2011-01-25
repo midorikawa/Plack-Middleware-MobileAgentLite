@@ -24,6 +24,9 @@ is_deeply $res,
     'is_softbank'      => 0,
     'encoding'         => 'x-sjis-docomo',
     'content_type'     => 'text/html;charset=shift_jis',
+	'is_smartphone'    => 0,
+	'is_iphone'		   => 0,
+	'is_android'       => 0,
   };
 
 done_testing;

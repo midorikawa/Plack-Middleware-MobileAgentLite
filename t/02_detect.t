@@ -23,6 +23,9 @@ is_deeply $res,
     'is_softbank'      => 0,
     'encoding'         => 'utf-8',
     'content_type'     => 'text/html;charset=utf-8',
+	'is_smartphone'    => 0,
+	'is_iphone'		   => 0,
+	'is_android'       => 0,
   };
 
 done_testing;
