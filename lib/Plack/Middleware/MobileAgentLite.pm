@@ -83,7 +83,6 @@ sub detect {
         }
         elsif ($2) {
             $res->{is_mobile}        = 1;
-            $res->{is_mobile}        = 1;
             $res->{is_vodafone}      = 1;
             $res->{is_softbank}      = 1;
             $res->{is_gps}           = 1;
