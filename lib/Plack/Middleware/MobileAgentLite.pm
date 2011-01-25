@@ -79,7 +79,7 @@ sub detect {
             $res->{encoding}         = "x-utf8-docomo";
             $res->{content_type}     = "application/xhtml+xml";
             $res->{user_id}          = $env->{HTTP_X_DCMGUID};
-            $res->{is_gps}           = 1 if $ua =~ qr/$GPSModelsRe/;
+            $res->{is_gps}           = 1 if $ua =~ $GPSModelsRe;
         }
         elsif ($2) {
             $res->{is_mobile}        = 1;
