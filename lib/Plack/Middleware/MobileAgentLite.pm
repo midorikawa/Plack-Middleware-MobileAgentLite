@@ -3,7 +3,7 @@ package Plack::Middleware::MobileAgentLite;
 use strict;
 use warnings;
 use parent 'Plack::Middleware';
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 my $ma = HTTP::MobileAgentLite->new();;
 
@@ -33,7 +33,7 @@ my $SAMsung           = '^SAMSUNG-';
 my $AirHRE            = '^Mozilla/3\.0\((?:WILLCOM|DDIPOCKET)\;';
 my $iPhoneRE          = '^Mozilla/5\.0 \(iPhone; U; CPU ';
 my $AndroidRE         = '^Mozilla/5\.0 \(Linux; U; Android \d\.\d(?:-update1)?;';
-my $BotRE             = qr/Google|Yahoo|http|craw|lwp/;
+my $BotRE             = qr/Google|Yahoo|http|crawl|lwp/;
 our $MobileAgentRE =
 qr/(?:($DoCoMoRE)|($JPhoneRE|$VodafoneRE|$VodafoneMotRE|$SoftBankRE|$SoftBankCrawlerRE)|($EZwebRE|$SAMsung)|($AirHRE)|($iPhoneRE)|($AndroidRE))/;
 # http://www.nttdocomo.co.jp/binary/pdf/service/imode/make/content/spec/imode_spec.pdf
@@ -55,6 +55,7 @@ sub _default_res_data {
         is_mobile        => 0,
         is_smartphone    => 0,
         is_gps           => 0,
+        type             => 'mobile',
         encoding         => 'utf-8',
         content_type     => 'text/html;charset=utf-8',
         carrier          => "",
@@ -64,6 +65,7 @@ sub _default_res_data {
 }
 
 sub new {  bless {}, $_[0] }
+
 
 sub detect {
     my ( $self, $env ) = @_;
@@ -114,18 +116,23 @@ sub detect {
         elsif ($5) {
             $res->{is_iphone}        = 1;
             $res->{is_smartphone}    = 1;
+            $res->{is_gps}           = 1;
             $res->{carrier}          = "S";
+            $res->{type}             = "smartphone";
             $res->{carrier_longname} = "iPhone";
         }
         elsif ($6) {
             $res->{is_android}       = 1;
             $res->{is_smartphone}    = 1;
+            $res->{is_gps}           = 1;
             $res->{carrier}          = "A";
+            $res->{type}             = "smartphone";
             $res->{carrier_longname} = "Android";
         }
     }
     else {
         $res->{is_non_mobile} = 1;
+        $res->{type}          = "non_mobile";
     }
 
     $res->{is_bot} = 1 if $ua =~ $BotRE;

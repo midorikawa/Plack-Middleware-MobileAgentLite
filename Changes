@@ -1,4 +1,6 @@
 Revision history for Perl extension Plack::Middleware::MobileAgentLite
+0.07     Fri, 28 January 2011 15:15:16 +0900
+		response attribute add "type"
 0.06     Tue, 25 January 2011 20:54:57 +0900
 		 response attribute add 
 			is_smartphone, is_iphone, is_android 

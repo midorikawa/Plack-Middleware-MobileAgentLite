@@ -16,7 +16,7 @@ is_deeply $res,
     'is_airh'          => 0,
     'is_docomo'        => 0,
     'is_bot'           => 0,
-    'is_gps'           => 0,
+    'is_gps'           => 1,
     'carrier'          => 'S',
     'is_mobile'        => 0,
     'is_non_mobile'    => 0,
@@ -28,6 +28,7 @@ is_deeply $res,
 	'is_smartphone'    => 1,
 	'is_iphone'		   => 1,
 	'is_android'       => 0,
+	'type' 			   => 'smartphone',
   };
 
 done_testing;

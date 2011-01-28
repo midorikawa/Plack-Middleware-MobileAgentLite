@@ -30,6 +30,7 @@ is_deeply $res,
 	'is_smartphone'    => 0,
 	'is_iphone'		   => 0,
 	'is_android'       => 0,
+	'type' 			   => 'mobile',
   };
 
 done_testing;

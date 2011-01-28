@@ -8,7 +8,7 @@ my $res =  +{
     'is_airh'          => 0,
     'is_docomo'        => 0,
     'is_bot'           => 0,
-    'is_gps'           => 0,
+    'is_gps'           => 1,
     'carrier'          => 'A',
     'is_mobile'        => 0,
     'is_non_mobile'    => 0,
@@ -20,6 +20,7 @@ my $res =  +{
 	'is_smartphone'    => 1,
 	'is_iphone'		   => 0,
 	'is_android'	   => 1,
+	'type' 			   => 'smartphone',
 };
 
 
